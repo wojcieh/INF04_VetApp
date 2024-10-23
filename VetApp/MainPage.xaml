@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VetApp.MainPage" Title="Wizyta u weterynarza" Shell.BackgroundColor="SeaGreen">
+
+    <ScrollView BackgroundColor="LightGreen">
+        <VerticalStackLayout
+            Padding="10"
+            >
+            <Entry x:Name="eWlasciel" Placeholder="Imię i nazwisko właściciela"/>
+            <Label Text="Gatunek"/>
+            <ListView x:Name="zwierze" ItemSelected="zwierze_ItemSelected">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pies</x:String>
+                        <x:String>Kot</x:String>
+                        <x:String>Świnka morska</x:String>
+                    </x:Array>
+
+                </ListView.ItemsSource>
+            </ListView>
+            <!--
+            <RadioButton x:Name="Pies" Value="Pies" Content="Pies" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton x:Name="Kot" Value="Kot" Content="Kot" CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton x:Name="Swinka" Value="Świnka Morska" Content="Świnka Morska" CheckedChanged="RadioButton_CheckedChanged"/>
+            -->
+            <StackLayout Orientation="Horizontal">
+            <Label Text="Ile ma lat? "/>
+            <Label x:Name="lWiek" Text="0"/>
+                <Slider x:Name="sWiek" Minimum="0" Maximum="20" HorizontalOptions="FillAndExpand" ValueChanged="sWiek_ValueChanged"/>
+            </StackLayout>
+            <Entry x:Name="eCel" Placeholder="Cel wizyty"/>
+            <TimePicker x:Name="tCzas" Time="16:00"/>
+            <Button Text="OK" Clicked="Button_Clicked"/>
+
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
